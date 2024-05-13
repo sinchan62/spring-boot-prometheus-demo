@@ -5,15 +5,14 @@ pipeline {
     stages{
         stage('Fetch the code'){
             steps {
-                git 'https://github.com/sinchan62/spring-boot-prometheus-demo.git'
+                echo 'code is fetched '
             }
         }
         stage('Dockerising the Spring app '){
             steps {
-                sh 'cd Spring-boot-prometheus-demo/'
                 sh 'sudo docker build -t springapp1 .'
             }
-            
+
         }
         stage {
             steps {
